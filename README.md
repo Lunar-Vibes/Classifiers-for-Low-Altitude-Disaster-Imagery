@@ -90,8 +90,8 @@ The final evaluation shows how the models handle real-world disaster scenarios. 
 
 
 <div align="left">
-  <img src="model_performance_chartpng" alt="Performance Distribution Chart" width="350"/>
-</div>
+  <img src="model_performance_chart.png" alt="Performance Distribution Chart" width="350"/>
+</div>       
 
 
 Despite these imbalances, the use of **Transfer Learning (ResNet50V2)** allowed the model to maintain high overall performance. By starting with a model that already understood general visual features, it remained robust even in categories where specific disaster data was scarce.
