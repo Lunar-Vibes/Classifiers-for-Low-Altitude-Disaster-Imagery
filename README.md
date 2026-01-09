@@ -76,3 +76,28 @@ In this project, I explored four distinct training strategies to find the best a
 | fine_tuning_resnet50v2 | 0.8791 | 0.8890 |
 
 **Note:** The transfer learning models (3 and 4) consistently outperformed the models built from scratch, demonstrating the power of using pretrained weights for specialized disaster detection tasks.
+
+## Performance Analysis
+
+The final evaluation shows how the models handle real-world disaster scenarios. While the overall accuracy reached **89%**, looking deeper into the results reveals a few important insights regarding the data distribution and specific challenges.
+
+#### Data Distribution & Challenges
+
+* **Data Mismatch:** One of the biggest challenges was that the training and validation data were quite different from the final test data. This is common in disaster imagery where ground conditions change rapidly, but it forced the model to be more adaptable to unseen environments.
+* **The "Fire" Gap:** We noticed relatively low performance in detecting fire events. This is likely due to the limited number of fire examples in the training set compared to the thousands of images available for categories like flooding or buildings.
+* **Test Data Scarcity:** Because there were very few fire images in the test set, even a single misclassification significantly impacted the percentage score for that category.
+
+
+
+<div align="left">
+  <img src="model_performance_chartpng" alt="Performance Distribution Chart" width="350"/>
+</div>
+
+
+Despite these imbalances, the use of **Transfer Learning (ResNet50V2)** allowed the model to maintain high overall performance. By starting with a model that already understood general visual features, it remained robust even in categories where specific disaster data was scarce.
+
+## Conclusion
+We started with a basic model and slowly made it smarter by adding data tricks and eventually using a professional, pre-built model called ResNet50V2. By the end, our system became very good at looking at photos from planes and identifying things like floods, broken buildings, and blocked roads with nearly 89% accuracy.
+
+While it still needs more practice with rare events—like fires, which were very hard to find in the data—it is a powerful tool. It shows that AI can help rescue teams find where help is needed much faster than a human could alone, even when the data isn't perfect.
+ 
