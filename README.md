@@ -46,3 +46,33 @@ The images are labeled using multi-label classification for the following classe
 * trees_any
 * trees_damage
 * water_any
+
+## Model Training & Methodology
+
+
+In this project, I explored four distinct training strategies to find the best approach for detecting disaster features in aerial imagery. The development followed a logical progression where the custom models and transfer learning models built upon one another to improve accuracy:
+
+#### 1. Custom Architectures
+* **Model 1: ConvNet from Scratch** I designed a custom convolutional neural network (CNN) architecture to establish a performance baseline. This allowed me to see how a model learns raw features directly from the LADI-v2 dataset.
+* **Model 2: ConvNet with Data Augmentation** **Built directly on Model 1**, I introduced a data augmentation layer (random flips, rotations, and zooms). This helped the scratch-built model generalize much better and significantly reduced the overfitting observed in the first iteration.
+
+
+
+#### 2. Transfer Learning (ResNet50V2)
+* **Model 3: ResNet50V2 Feature Extraction** I shifted to a pretrained **ResNet50V2** model to leverage advanced visual patterns. I used the base network as a fixed feature extractor, running the images through it once to generate feature arrays. This provided a massive boost in efficiency and accuracy.
+* **Model 4: ResNet50V2 Fine-Tuning** **Built over the pretrained Model 3**, I unfroze the top three layers of the ResNet base. By jointly training these specific layers with the custom classifier, the model was able to "fine-tune" its weights to the unique textures of disaster imagery like debris and floodwater.
+
+
+
+---
+
+## Performance Summary
+
+| Model Name | Validation Accuracy | Test Accuracy |
+| :--- | :---: | :---: |
+| convnet_from_scratch | 0.8627 | 0.8720 |
+| convnet_from_scratch_with_augmentation | 0.8876 | 0.8680 |
+| **feature_extraction_resnet50v2** | **0.8851** | **0.8900** |
+| fine_tuning_resnet50v2 | 0.8791 | 0.8890 |
+
+**Note:** The transfer learning models (3 and 4) consistently outperformed the models built from scratch, demonstrating the power of using pretrained weights for specialized disaster detection tasks.
