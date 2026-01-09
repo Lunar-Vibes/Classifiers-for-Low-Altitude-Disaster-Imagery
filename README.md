@@ -101,3 +101,31 @@ We started with a basic model and slowly made it smarter by adding data tricks a
 
 While it still needs more practice with rare events—like fires, which were very hard to find in the data—it is a powerful tool. It shows that AI can help rescue teams find where help is needed much faster than a human could alone, even when the data isn't perfect.
  
+## REFERENCES & RESOURCES
+
+Below are the primary academic papers, documentation, and technical resources used to develop the models and analysis in this project:
+
+* **He, K., Zhang, X., Ren, S., & Sun, J. (2016)**
+    *Deep Residual Learning for Image Recognition.* IEEE Conference on Computer Vision and Pattern Recognition (CVPR).  
+    [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
+
+* **Keras Documentation – Convolutional Neural Networks**
+    * [Transfer Learning Guide](https://keras.io/guides/transfer_learning/)
+    * [Convolutional Layers API](https://keras.io/api/layers/convolution_layers/)
+
+* **TensorFlow & Keras API Documentation**
+    * [TensorFlow API Docs](https://www.tensorflow.org/api_docs)
+    * [Keras API Overview](https://keras.io/api/)
+
+* **ResNetV2 Architecture**
+    * [Keras Applications: ResNetV2](https://keras.io/api/applications/resnet/#resnetv2-function)
+
+* **Google Big Transfer (BiT) Models**
+    * *Kolesnikov et al., Big Transfer (BiT): General Visual Representation Learning.* [Research Paper](https://arxiv.org/abs/1912.11370) | [Official GitHub](https://github.com/google-research/big_transfer)
+    * [Hugging Face BiT-50 Model Card](https://huggingface.co/google/bit-50)
+
+* **Binary Cross-Entropy Loss**
+    * [Keras Probabilistic Losses: BinaryCrossentropy](https://keras.io/api/losses/probabilistic_losses/#binarycrossentropy-class)
+
+* **RMSprop Optimizer**
+    * [Keras Optimizer API: RMSprop](https://keras.io/api/optimizers/rmsprop/)
